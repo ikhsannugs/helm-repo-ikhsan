@@ -41,4 +41,15 @@ entries:
     urls:
     - https://github.com/ikhsannugs/helm-repo-ikhsan/releases/download/sosmed-0.1.0/sosmed-0.1.0.tgz
     version: 0.1.0
+  wordpress:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-07-15T03:22:51.767611001Z"
+    description: Deploy wordpress with helm chart
+    digest: 263992643d3fdea1e961e01b4b56abbe6194befb6847cca2b115b55b28d82ada
+    name: wordpress
+    type: application
+    urls:
+    - https://github.com/ikhsannugs/helm-repo-ikhsan/releases/download/wordpress-1.0.0/wordpress-1.0.0.tgz
+    version: 1.0.0
 generated: "2022-07-14T14:33:14.695829988Z"
