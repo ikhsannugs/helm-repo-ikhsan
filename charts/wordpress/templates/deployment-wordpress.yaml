@@ -1,0 +1,44 @@
+{{- if .Values.wordpress.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-wordpress
+  namespace: {{ .Relase.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    tier: {{ .Release.Name }}-wordpress
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      tier: {{ .Release.Name }}-wordpress
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        tier: {{ .Release.Name }}-wordpress
+    spec:
+      containers:
+      - image: {{ .Values.wordpress.image }}
+        name: {{ .Release.Name }}
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-mysql
+              key: password-mysql
+        ports:
+        - containerPort: 80
+          name: {{ .Release.Name }}
+        volumeMounts:
+        - name: {{ .Release.Name }}-wordpress-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: {{ .Release.Name }}-wordpress-persistent-storage
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-wordpress-pv-claim
+{{- end }}

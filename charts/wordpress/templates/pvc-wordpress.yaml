@@ -1,0 +1,16 @@
+{{- if .Values.wordpress.enabled -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pv-claim
+  labels:
+    app: {{ .Release.Name }}
+    tier: {{ .Release.Name }}-wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.wordpress.storageClass.name }}
+  resources:
+    requests:
+      storage: {{ .Values.wordpress.storageClass.size }}
+{{- end }}
