@@ -3,6 +3,16 @@ entries:
   sosmed:
   - apiVersion: v2
     appVersion: 1.18.0
+    created: "2022-07-15T01:20:55.083322886Z"
+    description: A Helm chart for Kubernetes
+    digest: b2030689348440ae1e052ff18c2c7f2f83104f71cdfc0a68457fed5d9b870df2
+    name: sosmed
+    type: application
+    urls:
+    - https://github.com/ikhsannugs/helm-repo-ikhsan/releases/download/sosmed-0.4.0/sosmed-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.18.0
     created: "2022-07-15T01:16:45.760704284Z"
     description: A Helm chart for Kubernetes
     digest: ac44ac95b9a95519c5a51e0b4c5bdcf230402f66bab1e81f71af1df428f70885
