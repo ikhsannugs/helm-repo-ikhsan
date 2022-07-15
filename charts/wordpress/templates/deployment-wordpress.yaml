@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-wordpress
-  namespace: {{ .Relase.Namespace }}
+  namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Release.Name }}
     tier: {{ .Release.Name }}-wordpress
