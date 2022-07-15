@@ -43,6 +43,16 @@ entries:
     version: 0.1.0
   wordpress:
   - apiVersion: v2
+    appVersion: 1.0.3
+    created: "2022-07-15T07:32:12.918329308Z"
+    description: Deploy wordpress with helm chart
+    digest: 46ab9e07784f3499202d5f7d5658e0df9d5b82f09c73a1b5df1ce150e4de2a9f
+    name: wordpress
+    type: application
+    urls:
+    - https://github.com/ikhsannugs/helm-repo-ikhsan/releases/download/wordpress-1.0.3/wordpress-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
     appVersion: 1.0.2
     created: "2022-07-15T04:43:26.51367623Z"
     description: Deploy wordpress with helm chart
