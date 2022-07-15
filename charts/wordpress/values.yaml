@@ -1,21 +1,37 @@
 wordpress:
+
   enable: true
+
   registrySecret: []
+
   image: wordpress:4.8-apache
+
   service:
+
     port: 80
+
     targetPort: 80
+
     type: LoadBalancer
+
   storageClass: 
+
     name: nfs-client
+
     size: 10GB
 
-
 mysql:
+
   enable: true
+
   registrySecret: []
+
   image: mysql:5.6
+
   passwordDatabase: 123456789
+
   storageClass: 
+
     name: nfs-client
+
     size: 10GB
